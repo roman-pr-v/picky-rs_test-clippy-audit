@@ -45,8 +45,8 @@ jobs:
           cargo clippy
           --all-targets
           --all-features
-          --message-format=json | clippy-sarif | tee results.sarif | sarif-fmt
           -- -D warnings
+          --message-format=json | clippy-sarif | tee results.sarif | sarif-fmt
         continue-on-error: false
 
   build:
