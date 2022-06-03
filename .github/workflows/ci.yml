@@ -38,7 +38,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install required cargo
-        run: cargo install clippy-sarif sarif-fmt
+        run: rustup update
+             rustup component add clippy
 
       - name: Run rust-clippy
         run:
@@ -46,7 +47,6 @@ jobs:
           --all-targets
           --all-features
           -- -D warnings
-          --message-format=json | clippy-sarif | tee results.sarif | sarif-fmt
         continue-on-error: false
 
   build:
