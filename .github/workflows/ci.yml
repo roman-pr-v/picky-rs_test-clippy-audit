@@ -37,10 +37,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install required cargo
-        run: rustup update
-             rustup component add clippy
-
       - name: Run rust-clippy
         run:
           cargo clippy
