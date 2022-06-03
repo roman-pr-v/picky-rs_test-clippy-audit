@@ -43,7 +43,6 @@ jobs:
           --all-targets
           --all-features
           -- -D warnings
-        continue-on-error: false
 
   build:
     name: picky ${{ matrix.type }} [${{ matrix.os }}]
